@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond Borders</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=travel" />
+
+<link rel="stylesheet"  href="survice.css">
+<link rel="stylesheet"  href="css/responsive.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+</head>
+
+<body>
+<!--header start -->
+<header><div class="container">
+<nav>
+<div class="logo">
+<img src="./img/travel-icon.png" alt="" />
+</div>
+<ul>
+    <div class="btn">
+        <i class="fas fa-times close-btn"></i>
+    </div>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="flight.html">Flights</a></li>
+    <li><a href="weather.html">Weather</a></li>
+    <li><a href="survice.html">Survices</a></li>
+
+</ul>
+<div class="btn">
+    <i class="fas fa-bars menu-btn"></i>
+</div>
+</nav> 
+</div>
+</header>
+<!-- header end -->
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Find the best restaurants, hotels, and flights all in one place.</p>
+            <a href="#search" class="cta-button">Start Planning</a>
+        
+        </section>
+
+        <section id="search" class="search-section">
+            <h2>Plan Your Trip</h2>
+            <div class="search-container">
+                <div class="search-tabs">
+                    <button class="tab-button active" data-tab="restaurants">Restaurants</button>
+                    <button class="tab-button" data-tab="hotels">Hotels</button>
+                    <button class="tab-button" data-tab="flights">Flights</button>
+                </div>
+                <div class="search-content">
+                    <div class="tab-content active" id="restaurants-tab">
+                        <input type="text" id="restaurant-location" placeholder="Enter location">
+                        <button id="search-restaurants">Search Restaurants</button>
+                    </div>
+                    <div class="tab-content" id="hotels-tab">
+                        <input type="text" id="hotel-location" placeholder="Enter destination">
+                        <input type="date" id="check-in-date">
+                        <input type="date" id="check-out-date">
+                        <button id="search-hotels">Search Hotels</button>
+                    </div>
+                    <div class="tab-content" id="flights-tab">
+                        <input type="text" id="departure-location" placeholder="From">
+                        <input type="text" id="arrival-location" placeholder="To">
+                        <input type="date" id="departure-date">
+                        <input type="number" id="passengers" min="1" max="10" value="1">
+                        <button id="search-flights">Search Flights</button>
+                    </div>
+                </div>
+            </div>
+            <div id="results-container"></div>
+            <div id="map"></div>
+        </section>
+
+ 
+    </main>
+
+ 
+    <hr>
+    <div class="footer">
+        <p>&copy; 2025 TravelPlanner . All Rights Reserved.</p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="survice.js"></script>
+</body>
+</html>
+

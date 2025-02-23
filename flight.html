@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search Engine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+</head>
+<body>
+   <!-- <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-plane"></i>
+                <span>FlightFinder</span>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="flight.html" class="active">Flights</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">Car Rental</a></li>
+            </ul>
+        </nav>
+    </header>
+    -->
+
+    <header><div class="container">
+        <nav>
+        <div class="logo">
+        <img src="./img/travel-icon.png" alt="" />
+        </div>
+        <ul>
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flight.html">Flights</a></li>
+        <li><a href="weather.html">Weather</a></li>
+        <li><a href="survice.html">Survices</a></li>
+        
+        </ul>
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+        </nav> 
+        </div>
+        </header>
+        <!-- header end -->
+
+
+   
+
+
+      <main>
+
+        <section class="hero">
+            <h1>Find Your Perfect Flight</h1>
+            <p>Search and compare flights from hundreds of airlines</p>
+        </section>
+
+        <section class="search-container">
+            <form id="flight-search-form">
+                <div class="trip-type">
+                    <label class="radio-container">
+                        <input type="radio" name="trip-type" value="round-trip" checked>
+                        <span class="radio-label">Round Trip</span>
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="trip-type" value="one-way">
+                        <span class="radio-label">One Way</span>
+                    </label>
+                </div>
+
+                <div class="search-grid">
+                    <div class="form-group">
+                        <label for="origin">From</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-plane-departure"></i>
+                            <input type="text" id="origin" placeholder="City or Airport" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">To</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-plane-arrival"></i>
+                            <input type="text" id="destination" placeholder="City or Airport" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="depart-date">Depart</label>
+                        <div class="input-with-icon">
+                            <i class="far fa-calendar"></i>
+                            <input type="date" id="depart-date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group return-date">
+                        <label for="return-date">Return</label>
+                        <div class="input-with-icon">
+                            <i class="far fa-calendar"></i>
+                            <input type="date" id="return-date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passengers">Passengers</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="number" id="passengers" min="1" max="9" value="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cabin-class">Cabin Class</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-chair"></i>
+                            <select id="cabin-class" required>
+                                <option value="economy">Economy</option>
+                                <option value="premium_economy">Premium Economy</option>
+                                <option value="business">Business</option>
+                                <option value="first">First Class</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i><a href="https://www.skyscanner.net/"
+                    >Search Flights
+               </a></button>
+            </form>
+        </section>
+
+        <section id="results-container" class="results-container hidden">
+            <div class="results-header">
+                <h2>Flight Results</h2>
+                <div class="filters">
+                    <button class="filter-button">
+                        <i class="fas fa-filter"></i>
+                        Filters
+                    </button>
+                    <select id="sort-by">
+                        <option value="price">Price: Low to High</option>
+                        <option value="duration">Duration: Shortest</option>
+                        <option value="departure">Departure: Earliest</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="flights-list" class="flights-list">
+                <!-- Flights will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="loader"></div>
+            <p>Searching for the best flights...</p>
+        </div>
+    </main>
+
+<!-- <footer>
+        <div class="footer-content">
+         <div class="footer-section">
+                <h3>About FlightFinder</h3>
+                <p>Find and compare cheap flights from hundreds of airlines and travel agencies.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@travelPlanner.com</p>
+                <p>Phone: 000 000 0000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 created by YaraBakr</p>
+        </div>
+    </footer>
+-->
+
+<hr>
+<div class="footer">
+    <p>&copy; 2025 TravelPlanner . All Rights Reserved.</p>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
